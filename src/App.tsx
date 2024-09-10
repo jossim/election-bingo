@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import './Bingo.css'; // Optional: use this for styling the game.
 function App() {
-  function shuffleArray(array) {
+  function shuffleArray(array: any[]) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -58,7 +58,7 @@ function App() {
 
   console.log('bingoNumbers', bingoNumbers)
   // Toggle the selection state of a number
-  const handleNumberClick = (rowIndex, colIndex) => {
+  const handleNumberClick = (rowIndex: number, colIndex: number) => {
     const newSelectedNumbers = [...selectedNumbers];
     newSelectedNumbers[rowIndex][colIndex] = !newSelectedNumbers[rowIndex][colIndex];
     setSelectedNumbers(newSelectedNumbers);
